@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+        .form-sign{
+            padding: 5px;
+            max-width: 450px;
+            max-height: 200px;
+            margin: 0 auto;
+            box-sizing: border-box;
+        }
+        #submit, #submit:focus {
+            margin-top: 20px;
+            border-radius: 8px;
+            padding: 10px;
+            color: white;
+            background-color: #2084ba;
+            border: none;
+        }
+    </style>
+    <title>Login page</title>
+</head>
+<body class="bg-white">
+<div class="container text-left mt-5" >
+    <form class="form-sign" method="post" action="/">
+        <h4 class="form-sign-heading font-weight-bold">Login page</h4>
+        <div th:if="${logout}">
+            <div class="alert alert-success" role="alert">
+                Logged out.
+            </div>
+        </div>
+        <label for="email">Email</label>
+        <input type="text" name="email" id="email" class="form-control"
+               placeholder="Email address" required autofocus>
+        <br>
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password" class="form-control"
+               placeholder="Password" required>
+        <button class="btn btn-lg btn-primary btn-block" id="submit" >Log in</button>
+    </form>
+</div>
+</body>
+</html>
